@@ -52,7 +52,7 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: '#000',
     fontFamily: 'InterBold',
-    marginBottom: 30
+    marginBottom: 30,
   },
   inputGroup: {
     width: '100%',
@@ -76,7 +76,7 @@ export default StyleSheet.create({
     backgroundColor: '#fff',
   },
 
-  // --- novos estilos para o campo de senha ---
+  // --- campo de senha ---
   passwordWrapper: {
     position: 'relative',
     justifyContent: 'center',
@@ -95,9 +95,10 @@ export default StyleSheet.create({
   eyeIcon: {
     width: 20,
     height: 20,
-    tintColor: '#666', // cor opcional
+    tintColor: '#666',
   },
 
+  // --- botão login ---
   button: {
     width: 291,
     height: 42,
@@ -108,11 +109,16 @@ export default StyleSheet.create({
     marginTop: 20,
     marginBottom: 16,
   },
+  buttonDisabled: {
+    opacity: 0.5, // feedback visual quando desabilitado
+  },
   buttonText: {
     color: '#fff',
     fontWeight: 'bold',
     fontSize: 14,
   },
+
+  // --- textos auxiliares ---
   infoText: {
     fontSize: 12,
     color: '#000',
@@ -128,6 +134,8 @@ export default StyleSheet.create({
     color: '#000',
     fontSize: 12,
   },
+
+  // --- Google login ---
   googleRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
