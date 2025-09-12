@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "projeto-johnny",
+    "slug": "projeto-johnny",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/imagens/login/logo.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/imagens/start/logo 1.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/imagens/start/logo 1.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}
