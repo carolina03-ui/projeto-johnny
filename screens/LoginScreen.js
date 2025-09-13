@@ -9,15 +9,21 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
+<<<<<<< HEAD
   Alert,
+=======
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from '../styles/loginStyles';
 
+<<<<<<< HEAD
 // Firebase
 import { auth } from '../services/firebase/config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
+=======
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
 const emailValido = (value) => /\S+@\S+\.\S+/.test(value);
 
 const LoginScreen = () => {
@@ -27,12 +33,17 @@ const LoginScreen = () => {
   const [senha, setSenha] = useState('');
   const [mostrarSenha, setMostrarSenha] = useState(false);
 
+<<<<<<< HEAD
+=======
+  // Habilita o botão apenas quando ambos os campos forem válidos
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
   const podeEntrar = useMemo(() => {
     const okEmail = emailValido(email.trim());
     const okSenha = senha.trim().length >= 6;
     return okEmail && okSenha;
   }, [email, senha]);
 
+<<<<<<< HEAD
   const handleEntrar = async () => {
     if (!podeEntrar) return;
 
@@ -49,6 +60,11 @@ const LoginScreen = () => {
       console.log('❌ Erro login:', e.code, e.message);
       Alert.alert('Erro no login', e.message || 'Erro desconhecido');
     }
+=======
+  const handleEntrar = () => {
+    // Para apresentação: apenas navega quando válido
+    if (podeEntrar) navigation.navigate('Intro');
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
   };
 
   return (
@@ -91,12 +107,23 @@ const LoginScreen = () => {
                   placeholderTextColor="#999"
                   keyboardType="email-address"
                   autoCapitalize="none"
+<<<<<<< HEAD
                   value={email}
                   onChangeText={setEmail}
                 />
               </View>
 
               {/* Senha */}
+=======
+                  autoCorrect={false}
+                  value={email}
+                  onChangeText={setEmail}
+                  returnKeyType="next"
+                />
+              </View>
+
+              {/* Senha + olhinho */}
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
               <View style={styles.inputGroup}>
                 <Text style={styles.inputLabel}>Senha</Text>
                 <View style={styles.passwordWrapper}>
@@ -105,14 +132,27 @@ const LoginScreen = () => {
                     placeholder="********"
                     placeholderTextColor="#999"
                     autoCapitalize="none"
+<<<<<<< HEAD
                     value={senha}
                     onChangeText={setSenha}
                     secureTextEntry={!mostrarSenha}
+=======
+                    autoCorrect={false}
+                    value={senha}
+                    onChangeText={setSenha}
+                    secureTextEntry={!mostrarSenha}
+                    returnKeyType="go"
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
                     onSubmitEditing={handleEntrar}
                   />
                   <TouchableOpacity
                     style={styles.eyeBtn}
                     onPress={() => setMostrarSenha((prev) => !prev)}
+<<<<<<< HEAD
+=======
+                    accessibilityRole="button"
+                    accessibilityLabel={mostrarSenha ? 'Ocultar senha' : 'Mostrar senha'}
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
                   >
                     <Image
                       source={
@@ -126,14 +166,43 @@ const LoginScreen = () => {
                 </View>
               </View>
 
+<<<<<<< HEAD
               {/* Botão Login */}
+=======
+              {/* Botão Login (só habilita quando válido) */}
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
               <TouchableOpacity
                 style={[styles.button, !podeEntrar && styles.buttonDisabled]}
                 onPress={handleEntrar}
                 disabled={!podeEntrar}
+<<<<<<< HEAD
               >
                 <Text style={styles.buttonText}>Login</Text>
               </TouchableOpacity>
+=======
+                accessibilityRole="button"
+                accessibilityState={{ disabled: !podeEntrar }}
+              >
+                <Text style={styles.buttonText}>Login</Text>
+              </TouchableOpacity>
+
+              {/* Links */}
+              <Text style={styles.infoText}>
+                Esqueceu a senha? <Text style={styles.link}>Clique aqui</Text>
+              </Text>
+              <Text style={styles.infoText}>
+                Não possui uma conta? <Text style={styles.link}>Crie sua conta</Text>
+              </Text>
+
+              <Text style={styles.ou}>-- Ou --</Text>
+
+              {/* Google */}
+              <View style={styles.googleRow}>
+                <Image source={require('../assets/imagens/login/google-colorido.png')} style={styles.googleIcon} />
+                <Image source={require('../assets/imagens/login/google-cinza.png')} style={styles.googleIcon} />
+                <Image source={require('../assets/imagens/login/google-colorido.png')} style={styles.googleIcon} />
+              </View>
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
             </View>
           </ScrollView>
         </KeyboardAvoidingView>

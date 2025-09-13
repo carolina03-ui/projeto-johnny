@@ -7,15 +7,21 @@ import {
   Image,
   KeyboardAvoidingView,
   Platform,
+<<<<<<< HEAD
   Alert,
+=======
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from '../styles/cadastroStyles';
 
+<<<<<<< HEAD
 // Firebase
 import { auth } from '../services/firebase/config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
+=======
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
 export default function CadastroScreen() {
@@ -28,18 +34,34 @@ export default function CadastroScreen() {
   const [mostrarSenha1, setMostrarSenha1] = useState(false);
   const [mostrarSenha2, setMostrarSenha2] = useState(false);
 
+<<<<<<< HEAD
+=======
+  // Gate para habilitar o botão (independe de exibir erro na tela)
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
   const podeContinuar = useMemo(() => {
     const nomeOk = nome.trim().length > 0;
     const emailOk =
       emailCadastro.trim().length > 0 && emailRegex.test(emailCadastro);
+<<<<<<< HEAD
     const senha1Ok = senha1.length >= 6;
+=======
+    const senha1Ok = senha1.length >= 6; // mínimo 6
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
     const senha2Ok = senha2 === senha1 && senha2.length >= 6;
     return nomeOk && emailOk && senha1Ok && senha2Ok;
   }, [nome, emailCadastro, senha1, senha2]);
 
+<<<<<<< HEAD
   const erros = useMemo(() => {
     const e = {};
     if (!nome.trim()) e.nome = 'Informe seu nome.';
+=======
+  // Mensagens de erro (UI)
+  const erros = useMemo(() => {
+    const e = {};
+    if (!nome.trim()) e.nome = 'Informe seu nome.';
+    // E-mail: só mostra se digitou e ficou inválido
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
     if (emailCadastro.length > 0 && !emailRegex.test(emailCadastro)) {
       e.email = 'E-mail inválido.';
     }
@@ -48,6 +70,7 @@ export default function CadastroScreen() {
     return e;
   }, [nome, emailCadastro, senha1, senha2]);
 
+<<<<<<< HEAD
   const onContinuar = async () => {
     if (!podeContinuar) return;
 
@@ -64,6 +87,12 @@ export default function CadastroScreen() {
       console.log('❌ Erro cadastro:', e.code, e.message);
       Alert.alert('Erro no cadastro', e.message || 'Erro desconhecido');
     }
+=======
+  // 👉 leva para a tela de Questionário
+  const onContinuar = () => {
+    if (!podeContinuar) return;
+    navigation.navigate('Questionario');
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
   };
 
   return (
@@ -78,7 +107,11 @@ export default function CadastroScreen() {
         </TouchableOpacity>
       </View>
 
+<<<<<<< HEAD
       {/* Card destaque */}
+=======
+      {/* Card destaque com mascote */}
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
       <View style={styles.heroCard}>
         <View style={styles.heroTextBox}>
           <Text style={styles.heroTitle}>Queremos você aqui com a gente!</Text>
@@ -137,6 +170,10 @@ export default function CadastroScreen() {
           <TouchableOpacity
             onPress={() => setMostrarSenha1(v => !v)}
             style={styles.eyeBtn}
+<<<<<<< HEAD
+=======
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
           >
             <Image
               source={
@@ -164,6 +201,10 @@ export default function CadastroScreen() {
           <TouchableOpacity
             onPress={() => setMostrarSenha2(v => !v)}
             style={styles.eyeBtn}
+<<<<<<< HEAD
+=======
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
           >
             <Image
               source={
@@ -185,6 +226,30 @@ export default function CadastroScreen() {
         >
           <Text style={styles.ctaText}>Continuar</Text>
         </TouchableOpacity>
+<<<<<<< HEAD
+=======
+
+        {/* OU + ícones (layout) */}
+        <View style={styles.orRow}>
+          <View style={styles.hr} />
+          <Text style={styles.orText}>Ou</Text>
+          <View style={styles.hr} />
+        </View>
+
+        <View style={styles.socialRow}>
+          <Image source={require('../assets/imagens/cadastro/google1.png')} style={styles.socialIcon} />
+          <Image source={require('../assets/imagens/cadastro/google2.png')} style={styles.socialIcon} />
+          <Image source={require('../assets/imagens/cadastro/google3.png')} style={styles.socialIcon} />
+        </View>
+      </View>
+
+      {/* Rodapé decorativo */}
+      <View style={styles.waves}>
+        <View style={[styles.wave, styles.wave1]} />
+        <View style={[styles.wave, styles.wave2]} />
+        <View style={[styles.wave, styles.wave3]} />
+        <View style={[styles.wave, styles.wave4]} />
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
       </View>
     </KeyboardAvoidingView>
   );

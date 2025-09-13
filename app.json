@@ -4,11 +4,19 @@
     "slug": "projeto-johnny",
     "version": "1.0.0",
     "orientation": "portrait",
+<<<<<<< HEAD
     "icon": "./assets/imagens/login/logo.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/imagens/start/logo 1.png",
+=======
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,7 +25,11 @@
     },
     "android": {
       "adaptiveIcon": {
+<<<<<<< HEAD
         "foregroundImage": "./assets/imagens/start/logo 1.png",
+=======
+        "foregroundImage": "./assets/adaptive-icon.png",
+>>>>>>> ec6c550825214122c4ddf862fb04fadb604f4d32
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true
